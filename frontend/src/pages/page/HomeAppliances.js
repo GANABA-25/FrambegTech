@@ -18,7 +18,7 @@ const HomeAppliances = () => {
   const fetchHomeApplianceProducts = async (page) => {
     try {
       const response = await axios.get(
-        `http://localhost:8090/products/homeApplianceProducts/${category}?page=${page}`
+        `https://frambegtech-backend.onrender.com/products/homeApplianceProducts/${category}?page=${page}`,
       );
 
       const { products, totalPages } = response.data;
@@ -60,7 +60,7 @@ const HomeAppliances = () => {
         </div>
         <div>
           {homeApplianceProducts.length === 0 ? (
-            <div className="flex justify-center items-center w-full">
+            <div className="flex items-center justify-center w-full">
               <Lottie
                 className="w-[6rem]"
                 animationData={loadingAnimation}

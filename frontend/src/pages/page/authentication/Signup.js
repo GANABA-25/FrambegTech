@@ -68,7 +68,7 @@ const Signup = () => {
     setIsLoading(true);
     try {
       const response = await axios.post(
-        "https://rest-api-backend-for-frambeg-tech.onrender.com/user/signup",
+        "https://frambegtech-backend.onrender.com/user/signup",
         signupData,
       );
 
@@ -143,7 +143,7 @@ const Signup = () => {
                   <FaRegCheckCircle className="text-blue-600" />
                   <span className="opacity-95">Get started quickly</span>
                 </h1>
-                <p className="opacity-70 text-sm">
+                <p className="text-sm opacity-70">
                   Integrate with developer-friendly APIs or choose low-code or
                   pre-built solutions
                 </p>
@@ -153,7 +153,7 @@ const Signup = () => {
                   <FaRegCheckCircle className="text-blue-600" />
                   <span className="opacity-95">Support any business model</span>
                 </h1>
-                <p className="opacity-70 text-sm">
+                <p className="text-sm opacity-70">
                   E-commerce, subscriptions, SaaS platforms, marketplaces, and
                   more—all within a unified platform.
                 </p>
@@ -165,7 +165,7 @@ const Signup = () => {
                     Join millions of businesses
                   </span>
                 </h1>
-                <p className="opacity-70 text-sm">
+                <p className="text-sm opacity-70">
                   Stripe is trusted by ambitious startups and enterprises of
                   every size.
                 </p>
@@ -173,11 +173,11 @@ const Signup = () => {
             </div>
 
             <div className="max-[767px]:mb-8 max-[767px]:mt-4 flex max-[767px]:gap-3 opacity-80 md:gap-4 md:mt-6 md:text-xl lg:text-sm">
-              <h1 className=" cursor-pointer">@ Frambeg-Tech</h1>
+              <h1 className="cursor-pointer ">@ Frambeg-Tech</h1>
               <h1>Contact</h1>
               <h1>Privacy & terms</h1>
             </div>
-            <div className="hidden lg:block w-full lg:mt-4">
+            <div className="hidden w-full lg:block lg:mt-4">
               <img
                 src="https://res.cloudinary.com/dmdnq9vh8/image/upload/v1737224997/FrambegTech/ALLPRODUCTS/Humaaans5_zvnuzt.svg"
                 className="w-[15rem] h-[15rem]"
@@ -185,14 +185,14 @@ const Signup = () => {
               />
             </div>
           </div>
-          <form onSubmit={SubmitHandler} className="shadow-lg border-2">
+          <form onSubmit={SubmitHandler} className="border-2 shadow-lg">
             <div className="max-[767px]:px-4 max-[767px]:py-8 grid justify-center md:px-6 lg:px-16">
               <h1 className="max-[767px]:text-[1.38rem] max-[767px]:mb-4 font-bold md:text-2xl md:my-6 lg:text-xl">
                 Create your FrambegTech account
               </h1>
               {error && (
                 <div className=" capitalize font-bold border-2 border-red-600 mb-3 text-center lg:w-[25rem]">
-                  <div className="flex justify-center bg-red-600 text-white p-2 md:p-4 lg:p-2">
+                  <div className="flex justify-center p-2 text-white bg-red-600 md:p-4 lg:p-2">
                     <BiSolidError className="text-center max-[767px]: md:text-2xl lg:text-xl" />
                   </div>
                   <p className="p-2 text-sm md:text-lg">{errorMsg}</p>
@@ -200,7 +200,7 @@ const Signup = () => {
               )}
               {success && (
                 <div className=" capitalize font-bold border-2 border-green-600 mb-3 text-center lg:w-[25rem]">
-                  <div className="flex justify-center bg-green-600 text-white p-2 md:p-4 lg:p-2">
+                  <div className="flex justify-center p-2 text-white bg-green-600 md:p-4 lg:p-2">
                     <FaCircleCheck className="text-center max-[767px]: md:text-2xl lg:text-xl" />
                   </div>
                   <p className="p-2 text-sm md:text-lg">{successMsg}</p>
@@ -210,7 +210,7 @@ const Signup = () => {
                 <div className="grid gap-1 md:gap-2 lg:gap-1">
                   <label>Full Name</label>
                   <input
-                    className="bg-grayDark focus:outline-none focus:ring-2 focus:ring-blue-600 rounded-sm border-2 p-2 md:p-4 lg:p-2"
+                    className="p-2 border-2 rounded-sm bg-grayDark focus:outline-none focus:ring-2 focus:ring-blue-600 md:p-4 lg:p-2"
                     type="text"
                     name="fullName"
                     placeholder="Please Enter Your First and Last Email"
@@ -223,7 +223,7 @@ const Signup = () => {
                 <div className="grid gap-1 md:gap-2 lg:gap-1">
                   <label>Email</label>
                   <input
-                    className="bg-grayDark focus:outline-none focus:ring-2 focus:ring-blue-600 rounded-sm border-2 p-2 md:p-4 lg:p-2"
+                    className="p-2 border-2 rounded-sm bg-grayDark focus:outline-none focus:ring-2 focus:ring-blue-600 md:p-4 lg:p-2"
                     type="email"
                     name="email"
                     placeholder="Please Enter Your Email"
@@ -236,7 +236,7 @@ const Signup = () => {
                 <div className="relative grid gap-1 md:gap-2 lg:gap-1">
                   <label>Password</label>
                   <input
-                    className="bg-grayDark focus:outline-none focus:ring-2 focus:ring-blue-600 rounded-sm border-2 p-2 md:p-4 lg:p-2"
+                    className="p-2 border-2 rounded-sm bg-grayDark focus:outline-none focus:ring-2 focus:ring-blue-600 md:p-4 lg:p-2"
                     type={viewPassword ? "text" : "password"}
                     name="password"
                     placeholder="Please Enter Your Password"
@@ -259,7 +259,7 @@ const Signup = () => {
                 <div className="relative grid gap-1 md:gap-2 lg:gap-1">
                   <label>Confirm Password</label>
                   <input
-                    className="bg-grayDark focus:outline-none focus:ring-2 focus:ring-blue-600 rounded-sm border-2 p-2 md:p-4 lg:p-2"
+                    className="p-2 border-2 rounded-sm bg-grayDark focus:outline-none focus:ring-2 focus:ring-blue-600 md:p-4 lg:p-2"
                     type={viewConfirmPassword ? "text" : "password"}
                     name="confirmPassword"
                     placeholder="Please confirm Your Password"
@@ -339,7 +339,7 @@ const Signup = () => {
           <h1>Privacy & terms</h1>
         </div>
       </div>
-      <div className="hidden lg:block relative w-full">
+      <div className="relative hidden w-full lg:block">
         <img
           src="https://res.cloudinary.com/dmdnq9vh8/image/upload/v1737225229/FrambegTech/ALLPRODUCTS/Humaaans2_oykno7.svg"
           className="absolute bottom-0 right-0 w-[18rem] h-[18rem]"

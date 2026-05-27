@@ -21,7 +21,7 @@ const NewArrival = () => {
     const category = "New Arrival";
     try {
       const response = await axios.get(
-        `https://rest-api-backend-for-frambeg-tech.onrender.com/products/homeApplianceProducts/${category}?page=${page}`
+        `https://frambegtech-backend.onrender.com/products/homeApplianceProducts/${category}?page=${page}`,
       );
       const { products, totalPages } = response.data;
       setNewArrivalProducts(products);
@@ -47,9 +47,9 @@ const NewArrival = () => {
         <HeaderBrandDeal />
 
         <div className="md:m-4 lg:w-4/5 lg:m-auto">
-          <div className="border-2 py-4 md:p-4 lg:p-4 bg-white">
+          <div className="py-4 bg-white border-2 md:p-4 lg:p-4">
             {newArrivalProducts.length === 0 ? (
-              <div className="flex justify-center items-center w-full">
+              <div className="flex items-center justify-center w-full">
                 <Lottie
                   className="w-[6rem]"
                   animationData={loadingAnimation}
@@ -84,7 +84,7 @@ const NewArrival = () => {
 
           <div className="max-[767px]:grid max-[767px]:gap-4 max-[767px]:justify-center md:flex flex-wrap items-center justify-between gap-6 bg-sky-600 p-6 rounded-lg shadow-lg my-10 text-white">
             <div className="flex-1">
-              <h1 className="text-xl font-extrabold uppercase tracking-wider mb-2 md:text-2xl lg:text-4xl">
+              <h1 className="mb-2 text-xl font-extrabold tracking-wider uppercase md:text-2xl lg:text-4xl">
                 Create. Play.
               </h1>
               <p className="text-sm md:text-lg opacity-90">
@@ -92,33 +92,33 @@ const NewArrival = () => {
               </p>
             </div>
 
-            <div className="flex-1 flex justify-center md:justify-start">
-              <button className="bg-white text-sky-600 text-sm font-medium px-4 py-2 rounded-md shadow-md lg:hover:bg-sky-700 lg:hover:text-white transition-all md:text-lg">
+            <div className="flex justify-center flex-1 md:justify-start">
+              <button className="px-4 py-2 text-sm font-medium transition-all bg-white rounded-md shadow-md text-sky-600 lg:hover:bg-sky-700 lg:hover:text-white md:text-lg">
                 Order now
               </button>
             </div>
 
-            <div className="flex gap-3 flex-1 justify-center lg:justify-start">
+            <div className="flex justify-center flex-1 gap-3 lg:justify-start">
               <img
-                className="w-16 h-16 object-contain rounded-md md:w-24 md:h-24"
+                className="object-contain w-16 h-16 rounded-md md:w-24 md:h-24"
                 src="https://res.cloudinary.com/dmdnq9vh8/image/upload/v1711549638/FrambegTech/NEW%20ARRIVALS/Laptop_1_grb0al.png"
                 alt="Laptop 1"
               />
               <img
-                className="w-16 h-16 object-contain rounded-md md:w-24 md:h-24"
+                className="object-contain w-16 h-16 rounded-md md:w-24 md:h-24"
                 src="https://res.cloudinary.com/dmdnq9vh8/image/upload/v1711549643/FrambegTech/NEW%20ARRIVALS/Laptop_5_ss489t.png"
                 alt="Laptop 2"
               />
             </div>
 
-            <div className="flex gap-2 justify-center md:justify-start">
+            <div className="flex justify-center gap-2 md:justify-start">
               <img
-                className="w-8 h-8 object-contain md:w-12 md:h-12"
+                className="object-contain w-8 h-8 md:w-12 md:h-12"
                 src="https://res.cloudinary.com/dmdnq9vh8/image/upload/v1711541651/FrambegTech/NEW%20ARRIVALS/intel_1_rfo5hu.png"
                 alt="Intel Sticker 1"
               />
               <img
-                className="w-8 h-8 object-contain md:w-12 md:h-12"
+                className="object-contain w-8 h-8 md:w-12 md:h-12"
                 src="https://res.cloudinary.com/dmdnq9vh8/image/upload/v1711541652/FrambegTech/NEW%20ARRIVALS/intel_2_psifxo.png"
                 alt="Intel Sticker 2"
               />

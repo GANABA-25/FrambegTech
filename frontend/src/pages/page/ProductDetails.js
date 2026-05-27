@@ -27,7 +27,7 @@ const ProductDetails = () => {
     const fetchRelatedProducts = async () => {
       try {
         const response = await axios.get(
-          `https://rest-api-backend-for-frambeg-tech.onrender.com/products/relatedProducts/${payload.category}`
+          `https://frambegtech-backend.onrender.com/products/relatedProducts/${payload.category}`,
         );
         setRelatedProduct(response.data.relatedProducts);
       } catch (error) {
@@ -48,14 +48,14 @@ const ProductDetails = () => {
       <div className="max-[767px]:w-[95%] m-auto mt-[10rem] md:mt-[10rem] md:w-[90%] lg:w-[80%] lg:mt-[11rem]">
         <div className="flex flex-col max-[767px]:gap-8 md:gap-8 lg:flex-row lg:gap-16">
           <div className="flex flex-col items-center md:items-start lg:items-start lg:mr-8">
-            <div className="w-full mb-4 flex justify-center md:justify-start lg:justify-centers">
+            <div className="flex justify-center w-full mb-4 md:justify-start lg:justify-centers">
               <img
                 className="w-full h-[15rem] max-[767px]:py-4 md:w-[40rem] md:h-[25rem] lg:h-[21rem] p-4 rounded-lg object-contain border"
                 src={currentImage}
                 alt="Product"
               />
             </div>
-            <div className="flex gap-2 justify-center md:justify-start lg:justify-start">
+            <div className="flex justify-center gap-2 md:justify-start lg:justify-start">
               {images.map((image, index) => (
                 <img
                   key={index}
@@ -83,8 +83,8 @@ const ProductDetails = () => {
               {payload.description || "No description available."}
             </p>
             <div>
-              <h5 className="font-bold text-lg mb-2">Key Features:</h5>
-              <ul className="list-disc list-inside text-gray-700 space-y-1">
+              <h5 className="mb-2 text-lg font-bold">Key Features:</h5>
+              <ul className="space-y-1 text-gray-700 list-disc list-inside">
                 <li>Newest Technology</li>
                 <li>Best in class components</li>
                 <li>Dimensions - 69.5 × 750 × 169.0</li>
@@ -103,9 +103,9 @@ const ProductDetails = () => {
         </div>
 
         <div className="my-16">
-          <h2 className="text-2xl font-bold mb-4">Related Products</h2>
+          <h2 className="mb-4 text-2xl font-bold">Related Products</h2>
           {loading ? (
-            <div className="flex justify-center items-center">
+            <div className="flex items-center justify-center">
               <Lottie
                 className="w-24 h-24"
                 animationData={loadingAnimation}

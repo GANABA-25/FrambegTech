@@ -25,11 +25,11 @@ const HeaderBrandDeal = () => {
       <div className="mt-32 border-b-2">
         <div className="mx-4 my-8 pb-7 md:flex lg:w-4/5 lg:m-auto">
           <div className="md:w-3/6 md:mt-3 md:border-r-2">
-            <h1 className="text-4xl mb-4 font-bold opacity-80 md:text-5xl lg:text-6xl">
+            <h1 className="mb-4 text-4xl font-bold opacity-80 md:text-5xl lg:text-6xl">
               New arrivals
             </h1>
           </div>
-          <div className="md:w-3/6 opacity-75 md:text-xl md:border-l-2 md:p-6">
+          <div className="opacity-75 md:w-3/6 md:text-xl md:border-l-2 md:p-6">
             <p>
               Check out the latest products just in! Discover new items and stay
               updated with the freshest trends and innovations.

@@ -31,8 +31,8 @@ const ResetPasswordEmailVerification = () => {
 
     try {
       const response = await axios.post(
-        "https://rest-api-backend-for-frambeg-tech.onrender.com/user/resetPasswordEmailValidation",
-        emailVerificationData
+        "https://frambegtech-backend.onrender.com/user/resetPasswordEmailValidation",
+        emailVerificationData,
       );
 
       if (response.status === 200) {
@@ -122,8 +122,8 @@ const ResetPasswordEmailVerification = () => {
                 </div>
 
                 {error && (
-                  <div className="font-bold border-2 border-red-600 mb-3 text-center">
-                    <div className="flex justify-center bg-red-600 text-white p-2 md:p-4 lg:p-2">
+                  <div className="mb-3 font-bold text-center border-2 border-red-600">
+                    <div className="flex justify-center p-2 text-white bg-red-600 md:p-4 lg:p-2">
                       <BiSolidError className="text-center max-[767px]: md:text-2xl lg:text-xl" />
                     </div>
                     <p className="p-2 text-sm md:text-lg">{errorMsg}</p>
@@ -136,7 +136,7 @@ const ResetPasswordEmailVerification = () => {
                       Email
                     </label>
                     <input
-                      className="bg-grayDark focus:outline-none focus:ring-2 focus:ring-blue-600 rounded-sm border-2 p-2 md:p-4 lg:p-2"
+                      className="p-2 border-2 rounded-sm bg-grayDark focus:outline-none focus:ring-2 focus:ring-blue-600 md:p-4 lg:p-2"
                       type="email"
                       name="email"
                       placeholder="Please Enter Your Email"
@@ -171,7 +171,7 @@ const ResetPasswordEmailVerification = () => {
                 <div className="text-center">
                   <Link
                     to="/SignIn"
-                    className="text-blue-600 opacity-90 cursor-pointer md:text-xl lg:text-sm"
+                    className="text-blue-600 cursor-pointer opacity-90 md:text-xl lg:text-sm"
                   >
                     Return to sign in
                   </Link>
@@ -183,7 +183,7 @@ const ResetPasswordEmailVerification = () => {
                   <span className="opacity-80">New to Frambeg Tech</span>
                   <Link
                     to="/Signup"
-                    className="text-blue-600 hover:text-green-600 opacity-50 cursor-pointer"
+                    className="text-blue-600 opacity-50 cursor-pointer hover:text-green-600"
                   >
                     Create account
                   </Link>

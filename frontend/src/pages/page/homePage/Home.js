@@ -22,7 +22,7 @@ const Home = () => {
     const category = "Home";
     try {
       const response = await axios.get(
-        `https://rest-api-backend-for-frambeg-tech.onrender.com/products/BestDealsProducts/${category}?page=${page}`
+        `https://frambegtech-backend.onrender.com/products/BestDealsProducts/${category}?page=${page}`,
       );
 
       const { products } = response.data;
@@ -50,7 +50,7 @@ const Home = () => {
         <BrandDeals />
 
         {bestDealsProducts.length === 0 ? (
-          <div className="flex justify-center items-center w-full">
+          <div className="flex items-center justify-center w-full">
             <Lottie
               className="w-[6rem]"
               animationData={loadingAnimation}
@@ -59,11 +59,11 @@ const Home = () => {
           </div>
         ) : (
           <div className="lg:w-4/5 lg:m-auto max-[767px]:mt-8 md:mt-12 lg:mt-16">
-            <div className="lg:flex font-bold mb-8 m-4 lg:mx-0 lg:my-4">
+            <div className="m-4 mb-8 font-bold lg:flex lg:mx-0 lg:my-4">
               <h1 className="text-2xl opacity-75">Today's best deal</h1>
               <Link
                 to="/TodaysDeals"
-                className="text-blue-600 text-xl hover:-translate-x-1 hover:scale-110 duration-300 lg:ml-5 lg:text-xl"
+                className="text-xl text-blue-600 duration-300 hover:-translate-x-1 hover:scale-110 lg:ml-5 lg:text-xl"
               >
                 see more
               </Link>

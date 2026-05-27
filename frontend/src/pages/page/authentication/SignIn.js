@@ -50,8 +50,8 @@ const SignIn = () => {
 
     try {
       const response = await axios.post(
-        "https://rest-api-backend-for-frambeg-tech.onrender.com/user/login",
-        loginData
+        "https://frambegtech-backend.onrender.com/user/login",
+        loginData,
       );
 
       if (response.status === 200) {
@@ -83,19 +83,19 @@ const SignIn = () => {
   return (
     <Fragment>
       <ScrollToTop />
-      <div className="flex justify-center lg:items-center font-serif">
+      <div className="flex justify-center font-serif lg:items-center">
         <form onSubmit={SubmitHandler}>
           <h1 className="max-[767px]:text-xl max-[767px]:my-4 font-bold md:text-2xl md:my-8 lg:text-xl">
             Frambeg-Tech
           </h1>
           <div className="border-2">
-            <div className=" p-8 grid gap-8 shadow-lg">
+            <div className="grid gap-8 p-8 shadow-lg ">
               <h1 className="max-[767px]:text-xl font-bold md:text-2xl lg:text-xl">
                 Sign in to your account
               </h1>
               {error && (
-                <div className="font-bold capitalize border-2 border-red-600 text-center">
-                  <div className="flex justify-center bg-red-600 text-white p-2 md:p-4 lg:p-2">
+                <div className="font-bold text-center capitalize border-2 border-red-600">
+                  <div className="flex justify-center p-2 text-white bg-red-600 md:p-4 lg:p-2">
                     <BiSolidError className="text-center max-[767px]: md:text-2xl lg:text-xl" />
                   </div>
                   <p className="p-2 text-sm md:text-lg">{errorMsg}</p>
@@ -107,7 +107,7 @@ const SignIn = () => {
                     Email
                   </label>
                   <input
-                    className="bg-grayDark focus:outline-none focus:ring-2 focus:ring-blue-600 rounded-sm border-2 p-2 md:p-4 lg:p-2"
+                    className="p-2 border-2 rounded-sm bg-grayDark focus:outline-none focus:ring-2 focus:ring-blue-600 md:p-4 lg:p-2"
                     type="email"
                     name="email"
                     placeholder="Please Enter Your Email"
@@ -122,14 +122,14 @@ const SignIn = () => {
                     <label className="font-bold ">Password</label>
                     <Link
                       to="/ResetPasswordEmailVerification"
-                      className="text-blue-600 hover:text-black cursor-pointer"
+                      className="text-blue-600 cursor-pointer hover:text-black"
                     >
                       Forget your Password?
                     </Link>
                   </span>
 
                   <input
-                    className="bg-grayDark focus:outline-none focus:ring-2 focus:ring-blue-600 rounded-sm border-2 p-2 md:p-4 lg:p-2"
+                    className="p-2 border-2 rounded-sm bg-grayDark focus:outline-none focus:ring-2 focus:ring-blue-600 md:p-4 lg:p-2"
                     type={viewPassword ? "text" : "password"}
                     name="password"
                     placeholder="Please Enter Your Password"
@@ -178,7 +178,7 @@ const SignIn = () => {
                 )}
               </button>
 
-              <h1 className="cursor-pointer text-center hover:text-blue-600 md:text-2xl lg:text-sm">
+              <h1 className="text-center cursor-pointer hover:text-blue-600 md:text-2xl lg:text-sm">
                 Sign in with Google
               </h1>
             </div>
@@ -211,14 +211,14 @@ const SignIn = () => {
           <h1>Privacy & terms</h1>
         </div>
       </div>
-      <div className="hidden lg:block relative w-full">
+      <div className="relative hidden w-full lg:block">
         <img
           src="https://res.cloudinary.com/dmdnq9vh8/image/upload/v1737224997/FrambegTech/ALLPRODUCTS/Humaaans5_zvnuzt.svg"
           className="absolute bottom-0 left-[15rem] w-[10rem] h-[10rem]"
           alt="product"
         />
       </div>
-      <div className="hidden lg:block relative w-full">
+      <div className="relative hidden w-full lg:block">
         <img
           src="https://res.cloudinary.com/dmdnq9vh8/image/upload/v1737224869/FrambegTech/ALLPRODUCTS/phone2_sfe9ga.svg"
           className="absolute bottom-0 right-10 w-[25rem] h-[25rem]"

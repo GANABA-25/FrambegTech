@@ -19,7 +19,7 @@ const TodaysDeals = () => {
     const category = "Best-Deals";
     try {
       const response = await axios.get(
-        `https://rest-api-backend-for-frambeg-tech.onrender.com/products/BestDealsProducts/${category}?page=${page}`
+        `https://frambegtech-backend.onrender.com/products/BestDealsProducts/${category}?page=${page}`,
       );
 
       const { products, totalPages } = response.data;
@@ -46,9 +46,9 @@ const TodaysDeals = () => {
         <HeaderBrandDeals />
 
         <div className="md:m-4 lg:w-4/5 lg:m-auto">
-          <div className="border-2 py-4 md:p-4 lg:p-4 shadow-md bg-white">
+          <div className="py-4 bg-white border-2 shadow-md md:p-4 lg:p-4">
             {bestDealsProducts.length === 0 ? (
-              <div className="flex justify-center items-center w-full">
+              <div className="flex items-center justify-center w-full">
                 <Lottie
                   className="w-[6rem]"
                   animationData={loadingAnimation}
@@ -82,12 +82,12 @@ const TodaysDeals = () => {
             )}
           </div>
 
-          <div className="my-8 md:flex lg:flex lg:justify-between items-center rounded-lg shadow-lg bg-gray-50 overflow-hidden hover:shadow-2xl transition-shadow duration-300">
+          <div className="items-center my-8 overflow-hidden transition-shadow duration-300 rounded-lg shadow-lg md:flex lg:flex lg:justify-between bg-gray-50 hover:shadow-2xl">
             <div className="p-6 bg-white md:w-1/2 md:pt-16 lg:pt-20 lg:pl-10">
-              <h1 className="uppercase font-bold text-gray-500 opacity-70 md:mb-6 lg:text-2xl">
+              <h1 className="font-bold text-gray-500 uppercase opacity-70 md:mb-6 lg:text-2xl">
                 Brand's Deal
               </h1>
-              <h1 className="font-bold text-2xl mt-2 md:text-4xl lg:text-5xl lg:leading-snug">
+              <h1 className="mt-2 text-2xl font-bold md:text-4xl lg:text-5xl lg:leading-snug">
                 Save up to GH¢200 on Select Samsung Washing Machines
               </h1>
               <p className="mt-4 text-gray-700 md:text-lg lg:text-xl">
@@ -101,7 +101,7 @@ const TodaysDeals = () => {
 
             <div className="md:w-1/2">
               <img
-                className="w-full h-full object-cover md:p-4 md:mt-4 lg:mt-0 lg:p-0 hover:scale-105 transition-transform duration-300"
+                className="object-cover w-full h-full transition-transform duration-300 md:p-4 md:mt-4 lg:mt-0 lg:p-0 hover:scale-105"
                 src="https://res.cloudinary.com/dmdnq9vh8/image/upload/v1711542073/FrambegTech/TODAYS%20DEALS/samsung_vuvucg.jpg"
                 alt="Samsung Washing Machine"
               />

@@ -28,7 +28,7 @@ const SearchResultPage = () => {
       dispatch(setLoading(true));
       try {
         const response = await axios.get(
-          `https://rest-api-backend-for-frambeg-tech.onrender.com/products/searchedProducts/?searchedTerm=${searchedTerm}&page=${page}`
+          `https://frambegtech-backend.onrender.com/products/searchedProducts/?searchedTerm=${searchedTerm}&page=${page}`,
         );
         const { products, totalPages } = response.data;
         setProducts(products);
@@ -72,7 +72,7 @@ const SearchResultPage = () => {
           <div>
             <>
               {isLoading ? (
-                <div className="flex justify-center items-center w-full">
+                <div className="flex items-center justify-center w-full">
                   <Lottie
                     className="w-[6rem]"
                     animationData={loadingAnimation}

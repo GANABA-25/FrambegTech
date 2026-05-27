@@ -29,7 +29,7 @@ const ResetPassword = () => {
     const fetchTokenValidation = async () => {
       try {
         const res = await axios.get(
-          `https://rest-api-backend-for-frambeg-tech.onrender.com/user/tokenValidation/${token}`
+          `https://frambegtech-backend.onrender.com/user/tokenValidation/${token}`,
         );
 
         setUserId(res.data.userId);
@@ -83,7 +83,7 @@ const ResetPassword = () => {
     try {
       const response = await axios.post(
         ` http://localhost:8080/user/resetPassword/${token}`,
-        resetPassword
+        resetPassword,
       );
 
       setResetPassword({
@@ -142,16 +142,16 @@ const ResetPassword = () => {
               Reset your Password
             </h1>
             {error && (
-              <div className="font-bold capitalize border-2 border-red-600 mb-3 text-center">
-                <div className="flex justify-center bg-red-600 text-white p-2 md:p-4 lg:p-2">
+              <div className="mb-3 font-bold text-center capitalize border-2 border-red-600">
+                <div className="flex justify-center p-2 text-white bg-red-600 md:p-4 lg:p-2">
                   <BiSolidError className="text-center max-[767px]: md:text-2xl lg:text-xl" />
                 </div>
                 <p className="p-2 text-sm md:text-lg">{errorMsg}</p>
               </div>
             )}
             {success && (
-              <div className="font-bold capitalize border-2 border-green-600 mb-3 text-center">
-                <div className="flex justify-center bg-green-600 text-white p-2 md:p-4 lg:p-2">
+              <div className="mb-3 font-bold text-center capitalize border-2 border-green-600">
+                <div className="flex justify-center p-2 text-white bg-green-600 md:p-4 lg:p-2">
                   <FaCircleCheck className="text-center max-[767px]: md:text-2xl lg:text-xl" />
                 </div>
                 <p className="p-2 text-sm md:text-lg">{successMsg}</p>
@@ -162,7 +162,7 @@ const ResetPassword = () => {
               <div className="relative grid max-[767px]:gap-2 md:gap-4 lg:gap-1">
                 <label>New password</label>
                 <input
-                  className="bg-grayDark focus:outline-none focus:ring-2 focus:ring-blue-600 rounded-sm border-2 p-2 md:p-4 lg:p-2"
+                  className="p-2 border-2 rounded-sm bg-grayDark focus:outline-none focus:ring-2 focus:ring-blue-600 md:p-4 lg:p-2"
                   type={viewPassword ? "text" : "password"}
                   name="password"
                   placeholder="Please enter a new password"
@@ -172,7 +172,7 @@ const ResetPassword = () => {
                 />
                 <div
                   onClick={togglePasswordVisibility}
-                  className="absolute opacity-50 hover:opacity-100 right-4 bottom-3 flex items-center text-blue-600"
+                  className="absolute flex items-center text-blue-600 opacity-50 hover:opacity-100 right-4 bottom-3"
                 >
                   {viewPassword ? (
                     <FaEyeSlash className="w-[1.5rem] h-[1.5rem] cursor-pointer md:w-[2rem] md:h-[2rem] lg:w-[1.2rem] lg:h-[1.2rem]" />
@@ -185,7 +185,7 @@ const ResetPassword = () => {
               <div className="relative grid items-center max-[767px]:gap-2 md:gap-4 lg:gap-1">
                 <label>Confirm your password</label>
                 <input
-                  className="bg-grayDark focus:outline-none focus:ring-2 focus:ring-blue-600 rounded-sm border-2 p-2 md:p-4 lg:p-2"
+                  className="p-2 border-2 rounded-sm bg-grayDark focus:outline-none focus:ring-2 focus:ring-blue-600 md:p-4 lg:p-2"
                   type={viewConfirmPassword ? "text" : "password"}
                   name="confirmPassword"
                   placeholder="Please confirm the password"
@@ -195,7 +195,7 @@ const ResetPassword = () => {
                 />
                 <div
                   onClick={toggleConfirmPasswordVisibility}
-                  className="absolute opacity-50 hover:opacity-100 right-4 bottom-3 flex items-center text-blue-600"
+                  className="absolute flex items-center text-blue-600 opacity-50 hover:opacity-100 right-4 bottom-3"
                 >
                   {viewConfirmPassword ? (
                     <FaEyeSlash className="w-[1.5rem] h-[1.5rem] cursor-pointer md:w-[2rem] md:h-[2rem] lg:w-[1.2rem] lg:h-[1.2rem]" />
@@ -229,13 +229,13 @@ const ResetPassword = () => {
             </div>
           </form>
           <div className="max-[767px]:mt-4 flex max-[767px]:gap-3 md:gap-4 md:mt-6 md:text-xl lg:text-sm">
-            <h1 className="cursor-pointer opacity-50 hover:opacity-100">
+            <h1 className="opacity-50 cursor-pointer hover:opacity-100">
               @ Frambeg-Tech
             </h1>
-            <h1 className="cursor-pointer opacity-50 hover:opacity-100">
+            <h1 className="opacity-50 cursor-pointer hover:opacity-100">
               Contact
             </h1>
-            <h1 className="cursor-pointer opacity-50 hover:opacity-100">
+            <h1 className="opacity-50 cursor-pointer hover:opacity-100">
               Privacy & terms
             </h1>
           </div>
@@ -253,7 +253,7 @@ const ResetPassword = () => {
               <p>This password reset link has expired.</p>
               <Link
                 to="/ResetPasswordEmailVerification"
-                className="text-blue-600 cursor-pointer text-center opacity-50 hover:opacity-100"
+                className="text-center text-blue-600 opacity-50 cursor-pointer hover:opacity-100"
               >
                 Try resetting your password again
               </Link>
